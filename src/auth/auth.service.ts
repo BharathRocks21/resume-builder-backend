@@ -23,7 +23,7 @@ export class AuthService {
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = this.usersRepo.create({ username, password: hashedPassword });
     await this.usersRepo.save(user);
-    return { message: 'Signup successful' };
+    return { message: 'Signup successful' }; // signup response
   }
 
   async login(username: string, password: string) {
